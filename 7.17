@@ -1,0 +1,44 @@
+package shuzu;
+import java.util.Scanner;
+public class shengxu {
+
+	public static void main(String[] args) {
+		        Scanner input = new Scanner(System.in);
+		        int n = input.nextInt();
+				String[] name = new String[n];
+				double[] grade = new double[n];
+				
+				
+				
+				for(int i = 0; i < n; ++i)
+		        {
+					
+					name[i] = input.next();
+					grade[i] = input.nextDouble();
+				
+		        }
+				double flag;
+				String temp;
+				for(int i = 0; i < n-1; ++i)
+		        {
+					for(int j = i+1; j < n; ++j)
+		            {
+						if(grade[i] < grade[j])
+						{
+							flag = grade[i];
+							grade[i] = grade[j];
+							grade[j] = flag;
+							
+						    temp = name[i];
+							name[i] = name[j];
+							name[j] = temp;
+						}
+					}
+				}
+				
+				for(int i = 0; i < n; ++i)
+		    {
+					System.out.println(name[i] + "    " + grade[i]);
+				}
+			}	
+}
