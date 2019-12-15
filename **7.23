@@ -1,0 +1,43 @@
+package work;
+	import java.util.Scanner;
+public class work3 
+{
+
+	public static void main(String[] args) 
+	{
+				boolean[] box = new boolean[101];
+				int i,j;
+				for(i = 1; i <= 100; ++i)
+				{
+					if(i == 1)
+					{
+						for(j = 1; j <= 100; ++j)
+						{
+							box[j] =!box[j];
+						}
+					}
+		      
+					else if(i == 2)
+					{
+						for(j = i; j <= 100; j = j + 2)
+						{
+							box[j] = !box[j];
+						}
+					}
+		      
+					else
+					{
+						for(j=i; j <= 100; j = j+ i)
+						{
+							box[j] = !box[j];
+						}
+					}
+				}
+				
+				for(i = 1; i <= 100; ++i)
+				{
+					if(box[i])
+					System.out.println(i);
+				}
+	 }
+}
