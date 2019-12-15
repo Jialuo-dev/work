@@ -1,0 +1,43 @@
+package work;
+import java.util.Scanner; 
+import java.util.Arrays;
+public class work1 
+{
+	    public static void main(String[] args)
+	    {   	
+	    	Scanner input = new Scanner(System.in);
+	    	int[] num = new int[100];
+	    	int a = 101,zongshu = 0;
+	    
+	    	
+	    	while(true){
+	    		int temp = input.nextInt();
+	    		if(temp == 0)
+	    			break;
+	    		num[zongshu] = temp;
+	    		++zongshu;
+	    	}
+	    	Arrays.sort(num,0,zongshu);
+	    	int cishu = 0;
+	    	for(int i = 0; i<zongshu; ++i)
+	    	{
+	    		if(num[i] != a)
+	    		{
+	    			cishu = 0;
+		    		for(int j = 0; j < zongshu; ++j)
+		    		{
+		    			if(num[i] == num[j])
+		    			{
+		    				++cishu;
+		    				
+		    				if(i != j) 
+		    				{
+		    				num[j] = a;
+		    				}
+		    			}
+		    		}
+		    		System.out.println(num[i] + " occurs " + cishu + (cishu > 1 ? " times" : " time"));
+		    	}
+	    	}
+	    }
+	}
