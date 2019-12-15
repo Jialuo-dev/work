@@ -1,0 +1,33 @@
+package work;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Addition {
+
+	public static void main(String[] args) {
+		 Scanner input = new Scanner(System.in);
+		 
+	        int number1 = (int)(Math.random() * 9 + 1);
+	        int number2 = (int)(Math.random() * 9 + 1);
+	        
+	        System.out.print("What is " + number1 + " + " + number2 + "? ");
+	        
+	        int answer = input.nextInt();
+	        ArrayList<Integer> answerList = new ArrayList<>();
+	        while (answer != (number1 + number2))
+	        {
+	            if (answerList.contains(answer))
+	            {
+	                System.out.println("You already enter " + answer);
+	            }
+	            else
+	            {
+	                answerList.add(answer);
+	            }
+	            System.out.print("Wrong answer. Try again. What is " +
+	                number1 + " + " + number2 + "? "); 
+	            answer = input.nextInt();
+	        }
+	        System.out.println("You got it.");
+	}
+
+}
