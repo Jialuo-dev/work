@@ -1,0 +1,30 @@
+package work;
+import java.util.Scanner;
+
+public class work2 
+{
+
+	public static void main(String[] args)
+	{
+				Scanner input = new Scanner(System.in);
+			    System.out.println("Enter list:");
+				int n = input.nextInt();
+				int[] number = new int[n];
+				
+				for(int i = 0; i < n; ++i) 
+				{
+					number[i] = input.nextInt();
+				}
+				for(int i = 1; i < n; ++i)
+				{
+					if(number[i] < number[i-1])
+					{
+						System.out.println("The list is not sorted");
+						return ;
+					}
+				}
+		    
+				System.out.println("The list is already sorted");
+	}	
+
+}
